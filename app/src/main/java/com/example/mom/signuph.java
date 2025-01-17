@@ -43,7 +43,8 @@ public class signuph extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         languages = findViewById(R.id.editlang);
         genderGroup = findViewById(R.id.radioGroupGender);
-        registerButton = findViewById(R.id.buttonRegister);
+        registerButton = findViewById(R.id.buttonRegister
+        );
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override

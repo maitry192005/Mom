@@ -8,14 +8,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class selection extends AppCompatActivity {
+public class SelectionActivity extends AppCompatActivity {
+
     private Button btnHelper, btnCustomer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selection);
+        setContentView(R.layout.activity_selection);  // Set the layout from the provided XML file
 
+        // Initialize buttons from layout
         btnHelper = findViewById(R.id.btnHelper);
         btnCustomer = findViewById(R.id.btnCustomer);
 
@@ -23,9 +25,11 @@ public class selection extends AppCompatActivity {
         btnHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Helper Sign-Up page or show message
-                Toast.makeText(selection.this, "Signing up as a Helper", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(selection.this, signuph.class);
+                // Toast message to show action
+                Toast.makeText(SelectionActivity.this, "Signing up as a Helper", Toast.LENGTH_SHORT).show();
+
+                // Start the sign-up activity for Helper
+                Intent intent = new Intent(SelectionActivity.this, signuph.class);
                 startActivity(intent);
             }
         });
@@ -34,16 +38,12 @@ public class selection extends AppCompatActivity {
         btnCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to Customer Sign-Up page or show message
-                try {
-                    Toast.makeText(selection.this, "Signing up as a Customer", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), signupc.class);
-                    startActivity(intent);
-                }catch(Exception e){
-                    Toast.makeText(selection.this, "error"+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
+                // Toast message to show action
+                Toast.makeText(SelectionActivity.this, "Signing up as a Customer", Toast.LENGTH_SHORT).show();
 
-                }
+                // Start the sign-up activity for Customer
+                Intent intent = new Intent(SelectionActivity.this, signupcustomer.class);
+                startActivity(intent);
             }
         });
     }

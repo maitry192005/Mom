@@ -42,7 +42,7 @@ public class firebase extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(firebase.this, selection.class);
+                Intent i= new Intent(firebase.this, SelectionActivity.class);
                 startActivity(i);
             }
         });

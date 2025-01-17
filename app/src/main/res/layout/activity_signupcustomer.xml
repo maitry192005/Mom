@@ -32,12 +32,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Full Name"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextFullName"
+                    android:id="@+id/text1"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Full Name"
@@ -46,47 +46,6 @@
                     android:textColorHint="#888888"
                     android:textSize="14sp"
                     android:padding="10dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Gender -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/box"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gender"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <RadioGroup
-                    android:id="@+id/radioGroupGender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Male"
-                        android:textColor="#333333" />
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female"
-                        android:textColor="#333333" />
-                </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -108,16 +67,121 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextAddress"
+                    android:id="@+id/text2"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Address"
                     android:inputType="textPostalAddress"
+                    android:textColor="#333333"
+                    android:textColorHint="#888888"
+                    android:textSize="14sp"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Landmark -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Landmark"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/textland"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Enter Landmark"
+                    android:inputType="text"
+                    android:textColor="#333333"
+                    android:textColorHint="#888888"
+                    android:textSize="14sp"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- House Type -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="House Type"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/texthtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Enter House Type"
+                    android:inputType="text"
+                    android:textColor="#333333"
+                    android:textColorHint="#888888"
+                    android:textSize="14sp"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pincode -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pincode"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/num"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Enter Pincode"
+                    android:inputType="number"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
@@ -143,12 +207,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextPhoneNumber"
+                    android:id="@+id/textPhone"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Phone Number"
@@ -160,7 +224,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Age -->
+        <!-- Email -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -177,17 +241,17 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Age"
-                    android:textColor="@color/black"
+                    android:text="Email"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextAge"
+                    android:id="@+id/textage"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="Enter Age"
-                    android:inputType="number"
+                    android:hint="Enter Email"
+                    android:inputType="textEmailAddress"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
@@ -213,12 +277,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Username"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextUsername"
+                    android:id="@+id/signupuser"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Username"
@@ -248,12 +312,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Password"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextPassword"
+                    android:id="@+id/signuppass"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Password"
@@ -265,44 +329,16 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Languages Known -->
-        <androidx.cardview.widget.CardView
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/regis1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/box"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Languages Known"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/editlang"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Enter Languages known"
-                    android:inputType="text"
-                    android:textColor="#333333"
-                    android:textColorHint="#888888"
-                    android:textSize="14sp"
-                    android:padding="10dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:text="Register"
-            android:id="@+id/buttonRegister"/>
+            android:backgroundTint="#6A0DAD"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

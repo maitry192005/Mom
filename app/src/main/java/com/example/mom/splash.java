@@ -16,7 +16,7 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent= new Intent(splash.this, details.class);
+                Intent intent= new Intent(splash.this, firebase.class);
                 startActivity(intent);
                 finish();
             }

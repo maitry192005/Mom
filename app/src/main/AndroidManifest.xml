@@ -31,20 +31,18 @@
             android:name=".homec"
             android:exported="false" />
         <activity
-            android:name=".signupc"
+            android:name=".signupcustomer"
             android:exported="false" />
         <activity
             android:name=".signuph"
             android:exported="false" />
         <activity
-            android:name=".selection"
+            android:name=".SelectionActivity"
             android:exported="false" />
         <activity
             android:name=".firebase"
             android:exported="false" />
-        <activity
-            android:name=".details"
-            android:exported="false" />
+
         <activity
             android:name=".splash"
             android:exported="true">
