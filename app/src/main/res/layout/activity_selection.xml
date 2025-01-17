@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F9F9F9"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Title Section -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you looking for help or signing up as one?"
+        android:textSize="20sp"
+        android:textColor="#333"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <!-- Helper Button -->
+    <Button
+        android:id="@+id/btnHelper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Helper"
+        android:backgroundTint="@android:color/background_dark"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp" />
+
+    <!-- Customer Button -->
+    <Button
+        android:id="@+id/btnCustomer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer"
+        android:backgroundTint="@android:color/background_dark"
+        android:textColor="#FFFFFF"
+        android:padding="12dp" />
+
+</LinearLayout>

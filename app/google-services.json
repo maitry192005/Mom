@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "987775460409",
+    "project_id": "maid-o-meter-d43ae",
+    "storage_bucket": "maid-o-meter-d43ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987775460409:android:8627e0cbcac53b31a619e8",
+        "android_client_info": {
+          "package_name": "com.example.mom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1CZF19gkXO-H_xLRuLJ-E2wG227JMGpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
