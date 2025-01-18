@@ -15,28 +15,34 @@
         android:layout_height="wrap_content"
         android:text="NAMASTE!!"
         android:textSize="30sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c1"
-        android:text="One-time help"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c2"
-        android:text="Part-time help"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c3"
-        android:text="Full-time help"/>
-    </LinearLayout>
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/c1"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:backgroundTint="#1d44b8"
+            android:text="One-time help" />
+
+        <Button
+            android:id="@+id/c2"
+            android:layout_width="119dp"
+            android:layout_height="111dp"
+            android:backgroundTint="#1d44b8"
+            android:text="Part-time help" />
+
+        <Button
+            android:id="@+id/c3"
+            android:layout_width="118dp"
+            android:layout_height="112dp"
+            android:backgroundTint="#1d44b8"
+            android:text="Full-time help" />
+    </LinearLayout>
 
 
 </LinearLayout>

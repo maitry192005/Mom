@@ -303,6 +303,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Register"
+            android:backgroundTint="#1d44b8"
             android:id="@+id/buttonRegister"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

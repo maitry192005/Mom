@@ -335,7 +335,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:backgroundTint="#6A0DAD"
+            android:backgroundTint="#1d44b8"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
