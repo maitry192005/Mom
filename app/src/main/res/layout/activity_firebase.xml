@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mombg2"
+    android:background="@drawable/background2"
     android:overScrollMode="never"
     android:scrollbars="none"
     tools:context=".firebase">
@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-
             android:padding="16dp"
             android:gravity="center">
 
@@ -93,7 +92,7 @@
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:backgroundTint="#006400"
+                android:backgroundTint="#1d44b8"
                 android:text="Login"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
@@ -127,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Register"
-                android:textColor="#006400"
+                android:textColor="#1d44b8"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="4dp" />
