@@ -7,38 +7,59 @@
     android:gravity="center"
     android:padding="16dp">
 
-    <!-- Title Section -->
+    <ImageView
+        android:layout_width="338dp"
+        android:layout_height="241dp"
+        android:background="@drawable/signup_pic02" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Are you looking for help or signing up as one?"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:layout_marginBottom="24dp"
         android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="SELECT YOUR ROLE"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:textStyle="bold" />
-
-    <!-- Helper Button -->
-    <Button
-        android:id="@+id/btnHelper"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Helper"
-        android:backgroundTint="#1d44b8"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="16dp"
-        android:padding="12dp" />
+        android:orientation="horizontal">
 
-    <!-- Customer Button -->
-    <Button
-        android:id="@+id/btnCustomer"
-        android:layout_width="match_parent"
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#1d44b8"
-        android:padding="12dp"
-        android:text="Customer"
-        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <!-- Helper Button -->
+        <Button
+            android:id="@+id/btnHelper"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="#1D44b8"
+            android:drawableTop="@drawable/helper"
+            android:padding="12dp"
+            android:text="Helper"
+            android:textColor="#FFFFFF" />
 
-   />
+        <!-- Customer Button -->
 
+        <Button
+            android:id="@+id/btnCustomer"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="#1d44b8"
+            android:drawableTop="@drawable/ic_action_name"
+            android:padding="12dp"
+            android:text="Customer"
+            android:textColor="#FFFFFF"
+
+            />
+    </LinearLayout>
 </LinearLayout>

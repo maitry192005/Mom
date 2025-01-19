@@ -13,6 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Your Account"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"/>
 
         <!-- Full Name -->
         <androidx.cardview.widget.CardView
@@ -26,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -61,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -102,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -137,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -172,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -207,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -242,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -277,7 +287,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/box"
-                android:padding="16dp">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
