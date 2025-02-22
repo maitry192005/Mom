@@ -1,5 +1,6 @@
 package com.example.mom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,7 +10,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -43,8 +43,7 @@ public class signuph extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         languages = findViewById(R.id.editlang);
         genderGroup = findViewById(R.id.radioGroupGender);
-        registerButton = findViewById(R.id.buttonRegister
-        );
+        registerButton = findViewById(R.id.buttonRegister);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +89,11 @@ public class signuph extends AppCompatActivity {
             if (task.isSuccessful()) {
                 Toast.makeText(signuph.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                 clearFields();
+
+                // Redirect to firebase activity
+                Intent intent = new Intent(signuph.this, firebase.class);
+                startActivity(intent);
+                finish(); // Close this activity so the user cannot navigate back
             } else {
                 Toast.makeText(signuph.this, "Registration Failed", Toast.LENGTH_SHORT).show();
             }

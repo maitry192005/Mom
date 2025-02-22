@@ -30,8 +30,32 @@
                 android:layout_height="300dp"
                 android:contentDescription="App Logo"
                 android:src="@drawable/pic01" />
-
         </LinearLayout>
+
+        <!-- User Type Selection -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userTypeGroup"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/radio_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:textColor="@android:color/black" />
+
+            <RadioButton
+                android:id="@+id/radio_helper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Helper"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
 
         <!-- Username Field -->
         <TextView

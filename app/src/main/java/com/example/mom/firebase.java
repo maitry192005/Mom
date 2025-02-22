@@ -1,13 +1,13 @@
 package com.example.mom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -19,6 +19,7 @@ public class firebase extends AppCompatActivity {
     private TextInputEditText u_name, pass_word;
     private TextView registerButton;
     private Button btnSubmit;
+    private RadioButton radioCustomer, radioHelper;
 
     // Firebase Database Reference
     private DatabaseReference databaseReference;
@@ -34,17 +35,18 @@ public class firebase extends AppCompatActivity {
         // Initialize Views
         u_name = findViewById(R.id.u_name);
         pass_word = findViewById(R.id.pass_word);
-        registerButton=findViewById(R.id.registerButton);
+        registerButton = findViewById(R.id.registerButton);
         btnSubmit = findViewById(R.id.loginButton);
+        radioCustomer = findViewById(R.id.radio_customer);
+        radioHelper = findViewById(R.id.radio_helper);
 
-        // Set button click listener
+        // Set button click listener for login
         btnSubmit.setOnClickListener(v -> saveData());
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(firebase.this, SelectionActivity.class);
-                startActivity(i);
-            }
+
+        // Redirect to the registration page
+        registerButton.setOnClickListener(view -> {
+            Intent i = new Intent(firebase.this, SelectionActivity.class);
+            startActivity(i);
         });
     }
 
@@ -67,9 +69,20 @@ public class firebase extends AppCompatActivity {
         if (userId != null) {
             databaseReference.child(userId).setValue(user).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show();
-                    u_name.setText("");
-                    pass_word.setText("");
+                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
+
+                    // Check which radio button is selected and navigate accordingly
+                    if (radioCustomer.isChecked()) {
+                        Intent intent = new Intent(firebase.this, homec.class);
+                        intent.putExtra("username", uname);
+                        startActivity(intent);
+                    } else if (radioHelper.isChecked()) {
+                        Intent intent = new Intent(firebase.this, HelperActivity.class);
+                        intent.putExtra("username", uname);
+                        startActivity(intent);
+                    }
+
+                    finish(); // Close login activity
                 } else {
                     Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show();
                 }
@@ -84,7 +97,7 @@ class User {
     private String pswd;
 
     public User() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+        // Default constructor required for Firebase
     }
 
     public User(String uname, String pswd) {
@@ -96,7 +109,7 @@ class User {
         return uname;
     }
 
-    public String getMobile() {
+    public String getPassword() {
         return pswd;
     }
 }

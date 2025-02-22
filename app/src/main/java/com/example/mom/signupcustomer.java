@@ -1,5 +1,6 @@
 package com.example.mom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,16 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class signupcustomer extends AppCompatActivity {
 
-    // Declare EditText fields
     private EditText fullName, address, landmark, houseType, pincode, phoneNumber, email, username, password;
     private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signupcustomer);  // Assuming the layout XML file is named activity_signup.xml
+        setContentView(R.layout.activity_signupcustomer);
 
-        // Initialize the EditText fields
         fullName = findViewById(R.id.text1);
         address = findViewById(R.id.text2);
         landmark = findViewById(R.id.textland);
@@ -31,11 +30,9 @@ public class signupcustomer extends AppCompatActivity {
         password = findViewById(R.id.signuppass);
         registerButton = findViewById(R.id.regis1);
 
-        // Set an OnClickListener for the Register button
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the input values
                 String fullNameText = fullName.getText().toString();
                 String addressText = address.getText().toString();
                 String landmarkText = landmark.getText().toString();
@@ -46,23 +43,22 @@ public class signupcustomer extends AppCompatActivity {
                 String usernameText = username.getText().toString();
                 String passwordText = password.getText().toString();
 
-                // Validate the input fields
                 if (fullNameText.isEmpty() || addressText.isEmpty() || landmarkText.isEmpty() ||
                         houseTypeText.isEmpty() || pincodeText.isEmpty() || phoneText.isEmpty() ||
                         emailText.isEmpty() || usernameText.isEmpty() || passwordText.isEmpty()) {
                     Toast.makeText(signupcustomer.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 } else {
-                    // If all fields are filled, show a success message (you can replace this with actual registration logic)
                     Toast.makeText(signupcustomer.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-
-                    // Optionally, clear the input fields after successful registration
                     clearFields();
+
+                    // Switch to Firebase activity
+                    Intent intent = new Intent(signupcustomer.this, firebase.class);
+                    startActivity(intent);
                 }
             }
         });
     }
 
-    // Method to clear all the input fields
     private void clearFields() {
         fullName.setText("");
         address.setText("");

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- "Namaste" Text at Top Left -->
+    <TextView
+        android:id="@+id/textViewNamaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Namaste"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="start"/>
+
+    <!-- Image View -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="355dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/home_helper" />
+
+    <!-- Three Horizontal Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOneTimeWork"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Only One Time Work" />
+
+        <Button
+            android:id="@+id/buttonPartTimeWork"
+            android:layout_width="103dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Only Part Time Work" />
+
+        <Button
+            android:id="@+id/buttonFullTimeWork"
+            android:layout_width="91dp"
+            android:layout_height="85dp"
+            android:layout_margin="4dp"
+            android:text="Full Time Work" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/buttonHome"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_home"
+            android:contentDescription="Home"
+            android:background="?attr/selectableItemBackground"
+            android:layout_margin="8dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonNotification"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_map"
+            android:contentDescription="Notification"
+            android:background="?attr/selectableItemBackground"
+            android:layout_margin="8dp"/>
+
+        <ImageButton
+            android:id="@+id/buttonProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile"
+            android:background="?attr/selectableItemBackground"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,48 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity=""
-    android:background="@drawable/background2"
+    android:padding="16dp"
     tools:context=".homec">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NAMASTE!!"
-        android:textSize="30sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
 
-        <Button
-            android:id="@+id/c1"
-            android:layout_width="120dp"
-            android:layout_height="110dp"
-            android:backgroundTint="#1d44b8"
-            android:text="One-time help" />
+        <!-- Greeting Text -->
+        <TextView
+            android:id="@+id/textGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Namaste!!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:padding="8dp"/>
 
-        <Button
-            android:id="@+id/c2"
-            android:layout_width="119dp"
-            android:layout_height="111dp"
-            android:backgroundTint="#1d44b8"
-            android:text="Part-time help" />
+        <!-- Placeholder for Image -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="363dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/customer_home" />
 
-        <Button
-            android:id="@+id/c3"
-            android:layout_width="118dp"
-            android:layout_height="112dp"
-            android:backgroundTint="#1d44b8"
-            android:text="Full-time help" />
+        <!-- Three Help Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnOneTimeHelp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="One-time help"/>
+
+            <Button
+                android:id="@+id/btnPartTimeHelp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Part-time help"/>
+
+            <Button
+                android:id="@+id/btnFullTimeHelp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Full-time help"/>
+        </LinearLayout>
     </LinearLayout>
 
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="10dp">
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:contentDescription="Home"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:id="@+id/btnMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_map"
+            android:contentDescription="Map"
+            android:background="?attr/selectableItemBackground"/>
+
+        <ImageButton
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile"
+            android:background="?attr/selectableItemBackground"/>
+    </LinearLayout>
+</RelativeLayout>

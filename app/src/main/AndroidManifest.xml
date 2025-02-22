@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ExtraText">
+
     <uses-permission
         android:name="android.permission.INTERNET"
-         tools:ignore="WrongManifestParent" />
-
+        tools:ignore="WrongManifestParent" />
 
     <application
         android:allowBackup="true"
@@ -17,8 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MOM"
         tools:targetApi="31">
-
-         <activity
+        <activity
+            android:name=".workc"
+            android:exported="false" />
+        <activity
+            android:name=".HelperActivity"
+            android:exported="false" />
+        <activity
             android:name=".fulltime"
             android:exported="false" />
         <activity
@@ -42,12 +47,12 @@
         <activity
             android:name=".firebase"
             android:exported="false" />
-
         <activity
             android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
