@@ -55,7 +55,8 @@
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:maxLength="30"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -90,7 +91,8 @@
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:maxLength="150"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -125,44 +127,12 @@
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                    android:maxLength="25"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- House Type -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/box"
-                android:padding="5dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="House Type"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/texthtype"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Enter House Type"
-                    android:inputType="text"
-                    android:textColor="#333333"
-                    android:textColorHint="#888888"
-                    android:textSize="14sp"
-                    android:padding="10dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
         <!-- Pincode -->
         <androidx.cardview.widget.CardView
@@ -194,6 +164,7 @@
                     android:inputType="number"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
+                    android:maxLength="6"
                     android:textSize="14sp"
                     android:padding="10dp" />
             </LinearLayout>
@@ -226,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Phone Number"
+                    android:maxLength="10"
                     android:inputType="phone"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
@@ -262,6 +234,7 @@
                     android:layout_height="48dp"
                     android:hint="Enter Email"
                     android:inputType="textEmailAddress"
+                    android:maxLength="25"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
@@ -296,6 +269,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Username"
+                    android:maxLength="8"
                     android:inputType="text"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
@@ -331,11 +305,60 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Enter Password"
+                    android:maxLength="6"
                     android:inputType="textPassword"
                     android:textColor="#333333"
                     android:textColorHint="#888888"
                     android:textSize="14sp"
                     android:padding="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- House Type -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="House Type"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupHouseType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio_2bhk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2BHK" />
+
+                    <RadioButton
+                        android:id="@+id/radio_3bhk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3BHK" />
+
+                    <RadioButton
+                        android:id="@+id/radio_4bhk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4BHK" />
+                </RadioGroup>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
