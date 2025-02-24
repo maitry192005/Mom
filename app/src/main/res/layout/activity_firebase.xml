@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Username"
                 android:textColor="@android:color/black"
+                android:maxLength="8"
                 android:textColorHint="@android:color/darker_gray"
                 android:background="@android:color/transparent" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -104,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Password"
                 android:inputType="textPassword"
+                android:maxLength="6"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
                 android:background="@android:color/transparent" />

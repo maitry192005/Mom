@@ -7,7 +7,7 @@
     android:gravity="center"
     android:padding="16dp">
 
-    <ImageView
+    <ImageView  
         android:layout_width="338dp"
         android:layout_height="241dp"
         android:background="@drawable/signup_pic02" />

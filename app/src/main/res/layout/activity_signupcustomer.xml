@@ -345,18 +345,21 @@
                         android:id="@+id/radio_2bhk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="2BHK" />
 
                     <RadioButton
                         android:id="@+id/radio_3bhk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="3BHK" />
 
                     <RadioButton
                         android:id="@+id/radio_4bhk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="4BHK" />
                 </RadioGroup>
             </LinearLayout>

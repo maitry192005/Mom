@@ -22,7 +22,7 @@ public class signupcustomer extends AppCompatActivity {
         fullName = findViewById(R.id.text1);
         address = findViewById(R.id.text2);
         landmark = findViewById(R.id.textland);
-        houseType = findViewById(R.id.texthtype);
+
         pincode = findViewById(R.id.num);
         phoneNumber = findViewById(R.id.textPhone);
         email = findViewById(R.id.textage);

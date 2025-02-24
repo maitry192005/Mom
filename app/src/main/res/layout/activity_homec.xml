@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/background2"
     tools:context=".homec">
 
     <LinearLayout
@@ -68,38 +69,42 @@
     <!-- Bottom Navigation Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/btnHome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/buttonHome"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_home"
             android:contentDescription="Home"
-            android:background="?attr/selectableItemBackground"/>
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"/>
 
         <ImageButton
-            android:id="@+id/btnMap"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/buttonNotification"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_map"
-            android:contentDescription="Map"
-            android:background="?attr/selectableItemBackground"/>
+            android:contentDescription="Notification"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackground"
+            android:layout_weight="1"/>
 
         <ImageButton
-            android:id="@+id/btnProfile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/buttonProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_profile"
             android:contentDescription="Profile"
-            android:background="?attr/selectableItemBackground"/>
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>
