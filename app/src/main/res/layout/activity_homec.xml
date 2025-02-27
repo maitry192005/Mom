@@ -23,6 +23,7 @@
             android:text="Namaste!!"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_gravity="center_horizontal"
             android:padding="8dp"/>
 
@@ -33,36 +34,42 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:src="@drawable/customer_home" />
+            android:src="@drawable/customer_home01" />
 
         <!-- Three Help Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/btnOneTimeHelp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:text="One-time help"/>
+                android:background="@drawable/rounded_box"
+                android:text="One-time help" />
 
             <Button
                 android:id="@+id/btnPartTimeHelp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Part-time help"/>
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1.2"
+                android:background="@drawable/rounded_box"
+                android:text="Part-time help" />
 
             <Button
                 android:id="@+id/btnFullTimeHelp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Full-time help"/>
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="16sp"
+                android:layout_weight="1.2"
+                android:background="@drawable/rounded_box"
+                android:text="Full-time help" />
         </LinearLayout>
     </LinearLayout>
 
