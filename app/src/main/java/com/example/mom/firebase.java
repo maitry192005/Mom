@@ -32,6 +32,8 @@ public class firebase extends AppCompatActivity {
         // Initialize Firebase Database
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
+
+
         // Initialize Views
         u_name = findViewById(R.id.u_name);
         pass_word = findViewById(R.id.pass_word);

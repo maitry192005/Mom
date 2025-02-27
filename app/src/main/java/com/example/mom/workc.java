@@ -8,6 +8,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AlertDialog;
 
@@ -20,6 +34,8 @@ public class workc extends AppCompatActivity {
     private RadioButton vegRadioButton, nonVegRadioButton, bothRadioButton;
     private EditText membersEditText, houseSizeEditText;
     private Button submitButton;
+    private static final String CHANNEL_ID = "ActivityNotificationChannel";
+    private EditText editTextUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +53,12 @@ public class workc extends AppCompatActivity {
         houseSizeEditText = findViewById(R.id.houseSizeEditText);
         utensilCleaningCheckBox = findViewById(R.id.utensilCleaningCheckBox);
         dustingCheckBox = findViewById(R.id.dustingCheckBox);
-        submitButton = findViewById(R.id.submitButton);
+
+        editTextUsername = findViewById(R.id.editTextUsername);
+        Button notifyButton = findViewById(R.id.notifyButton);
+        requestNotificationPermission();
+
+        notifyButton.setOnClickListener(v -> sendNotification());
 
         // Show/Hide cooking options and members input based on checkbox
         cookingCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -80,4 +101,60 @@ public class workc extends AppCompatActivity {
             }
         });
     }
+    private void requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // Android 13+
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
+            }
+        }
+    }
+    private void sendNotification() {
+        String username = editTextUsername.getText().toString().trim();
+
+        if (username.isEmpty()) {
+            Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Intent to open NotificationActivity when the notification is clicked
+        Intent intent = new Intent(this, admin.class);
+        intent.putExtra("username", username); // Passing the entered username
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_IMMUTABLE
+        );
+
+        // Create Notification Channel (for Android 8.0+)
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(
+                    CHANNEL_ID, "Activity Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        // Build and Show Notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.ic_dialog_info) // Use system icon if custom icon missing
+                .setContentTitle("New Notification")
+                .setContentText("Click to see your username")
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent);
+
+        notificationManager.notify(1, builder.build());
+
+        // Show confirmation message
+        Toast.makeText(this, "Notification Sent!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 101) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission granted
+            }
+        }
+    }
+
 }
