@@ -12,8 +12,8 @@
         <!-- Title -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="324dp"
-            android:layout_height="182dp"
+            android:layout_width="323dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:src="@drawable/workc01" />
