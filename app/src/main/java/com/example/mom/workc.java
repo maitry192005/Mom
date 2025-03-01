@@ -54,7 +54,7 @@ public class workc extends AppCompatActivity {
         utensilCleaningCheckBox = findViewById(R.id.utensilCleaningCheckBox);
         dustingCheckBox = findViewById(R.id.dustingCheckBox);
 
-        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextUsername = findViewById(R.id.editUsername);
         Button notifyButton = findViewById(R.id.notifyButton);
         requestNotificationPermission();
 

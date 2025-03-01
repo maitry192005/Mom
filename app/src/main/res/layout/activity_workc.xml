@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@drawable/background2"
     android:layout_height="match_parent">
@@ -9,20 +9,20 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="324dp"
-            android:layout_height="182dp"
+            android:layout_width="355dp"
+            android:layout_height="241dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:src="@drawable/workc01" />
 
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="For what works do you want to hire?"
-            android:textSize="20dp"
+            android:textSize="23sp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"
@@ -92,8 +92,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:hint="House Size (e.g:-2BHK)"
+            android:hint="House Size (BHK)"
             android:textColorHint="@color/black"
+            android:inputType="number"
             android:visibility="gone" />
 
         <!-- Utensil Cleaning -->
@@ -114,58 +115,24 @@
             android:textColor="@color/black"
             android:text="Dusting (Intense Cleaning)" />
 
-        <!-- Submit Button -->
-        <Button
-            android:id="@+id/submitButton"
+        <EditText
+            android:id="@+id/editUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit"
-            android:textColor="@color/white"
-            android:backgroundTint="#1d44b8"
-            android:layout_marginTop="16dp" />
-    </LinearLayout>
-    <!-- Bottom Navigation Bar -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:orientation="horizontal">
+            android:hint="Enter your username"
+            android:padding="10dp"
+            android:textSize="16sp"/>
 
-        <ImageButton
-            android:id="@+id/buttonHome"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_home"
-            android:contentDescription="Home"
-            android:scaleType="fitCenter"
-            android:background="?attr/selectableItemBackground"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/notifyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Notification"
+            android:layout_marginTop="20dp"/>
 
-        <ImageButton
-            android:id="@+id/buttonNotification"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_map"
-            android:contentDescription="Notification"
-            android:scaleType="fitCenter"
-            android:background="?attr/selectableItemBackground"
-            android:layout_weight="1"/>
 
-        <ImageButton
-            android:id="@+id/buttonProfile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_profile"
-            android:contentDescription="Profile"
-            android:scaleType="fitCenter"
-            android:background="?attr/selectableItemBackground"
-            android:layout_marginEnd="16dp"
-            android:layout_weight="1"/>
+
+
     </LinearLayout>
 
-
-
-</RelativeLayout>
+</ScrollView>

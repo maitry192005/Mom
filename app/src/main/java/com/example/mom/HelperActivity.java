@@ -31,9 +31,7 @@ public class HelperActivity extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // Switch to workc activity
-                                Intent intent = new Intent(HelperActivity.this, workc.class);
-                                startActivity(intent);
+                                switchToWorkActivity();
                             }
                         })
                         .setNegativeButton("Cancel", null)
@@ -73,12 +71,19 @@ public class HelperActivity extends AppCompatActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Switch to workc activity
-                        Intent intent = new Intent(HelperActivity.this, workc.class);
-                        startActivity(intent);
+                        switchToWorkActivity();
                     }
                 })
                 .setNegativeButton("Cancel", null)
                 .show();
+    }
+
+    private void switchToWorkActivity() {
+        try {
+            Intent intent = new Intent(HelperActivity.this, workc.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

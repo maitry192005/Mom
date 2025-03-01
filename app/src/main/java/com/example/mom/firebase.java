@@ -1,27 +1,34 @@
 package com.example.mom;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class firebase extends AppCompatActivity {
 
-    private TextInputEditText u_name, pass_word;
+    private EditText u_name, pass_word;
     private TextView registerButton;
     private Button btnSubmit;
     private RadioButton radioCustomer, radioHelper;
 
-    // Firebase Database Reference
     private DatabaseReference databaseReference;
 
     @Override
@@ -29,12 +36,8 @@ public class firebase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase);
 
-        // Initialize Firebase Database
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
-
-
-        // Initialize Views
         u_name = findViewById(R.id.u_name);
         pass_word = findViewById(R.id.pass_word);
         registerButton = findViewById(R.id.registerButton);
@@ -42,76 +45,64 @@ public class firebase extends AppCompatActivity {
         radioCustomer = findViewById(R.id.radio_customer);
         radioHelper = findViewById(R.id.radio_helper);
 
-        // Set button click listener for login
-        btnSubmit.setOnClickListener(v -> saveData());
-
-        // Redirect to the registration page
         registerButton.setOnClickListener(view -> {
-            Intent i = new Intent(firebase.this, SelectionActivity.class);
-            startActivity(i);
+            startActivity(new Intent(firebase.this, signupcustomer.class));
+        });
+
+        btnSubmit.setOnClickListener(view -> {
+            String usernameText = u_name.getText().toString().trim();
+            String passwordText = pass_word.getText().toString().trim();
+
+            if (validateInputs(usernameText, passwordText)) {
+                loginUser(usernameText, passwordText);
+            }
         });
     }
 
-    private void saveData() {
-        String uname = u_name.getText().toString().trim();
-        String pswd = pass_word.getText().toString().trim();
-
-        if (uname.isEmpty() || pswd.isEmpty()) {
-            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-            return;
+    private boolean validateInputs(String username, String password) {
+        if (TextUtils.isEmpty(username)) {
+            u_name.setError("Username is required");
+            u_name.requestFocus();
+            return false;
         }
+        if (TextUtils.isEmpty(password)) {
+            pass_word.setError("Password is required");
+            pass_word.requestFocus();
+            return false;
+        }
+        return true;
+    }
 
-        // Create a unique ID for each user
-        String userId = databaseReference.push().getKey();
+    private void loginUser(String username, String password) {
+        btnSubmit.setVisibility(View.INVISIBLE);
 
-        // Create a User object
-        User user = new User(uname, pswd);
+        databaseReference.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                btnSubmit.setVisibility(View.VISIBLE);
 
-        // Save data under the unique user ID
-        if (userId != null) {
-            databaseReference.child(userId).setValue(user).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
+                if (snapshot.exists()) {
+                    String passwordFromDB = snapshot.child("password").getValue(String.class);
 
-                    // Check which radio button is selected and navigate accordingly
-                    if (radioCustomer.isChecked()) {
+                    if (passwordFromDB != null && passwordFromDB.equals(password)) {
+                        Toast.makeText(firebase.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(firebase.this, homec.class);
-                        intent.putExtra("username", uname);
                         startActivity(intent);
-                    } else if (radioHelper.isChecked()) {
-                        Intent intent = new Intent(firebase.this, HelperActivity.class);
-                        intent.putExtra("username", uname);
-                        startActivity(intent);
+                        finish();
+                    } else {
+                        pass_word.setError("Incorrect password");
+                        pass_word.requestFocus();
                     }
-
-                    finish(); // Close login activity
                 } else {
-                    Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show();
+                    u_name.setError("User not found");
+                    u_name.requestFocus();
                 }
-            });
-        }
-    }
-}
+            }
 
-// User model class
-class User {
-    private String uname;
-    private String pswd;
-
-    public User() {
-        // Default constructor required for Firebase
-    }
-
-    public User(String uname, String pswd) {
-        this.uname = uname;
-        this.pswd = pswd;
-    }
-
-    public String getName() {
-        return uname;
-    }
-
-    public String getPassword() {
-        return pswd;
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(firebase.this, "Database error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
